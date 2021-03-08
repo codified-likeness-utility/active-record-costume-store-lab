@@ -1,3 +1,14 @@
-# Create your haunted_houses migration here
+class CreateHauntedHouses < ActiveRecord::Migration[4.2]
 
-# !!! Before you run rake db:migrate, remember to fill out the other migration files -- otherwise you'll get an error resulting from the blank migration files.
+    def change
+        create_table :haunted_houses do |house|
+            house.string :name
+            house.string :location
+            house.string :theme
+            house.integer :price
+            house.boolean :family_friendly
+            house.timestamp :opening_date, :closing_date
+            house.string :description
+        end
+    end
+end
